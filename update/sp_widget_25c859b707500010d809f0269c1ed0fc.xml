@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope) {
+	
+	var c = this;
+	
+	$scope.selectedList = {};
+	$scope.doSelect = function(selected, opt){
+		if(!$scope.selectedList[opt]){
+			$scope.selectedList[opt] = selected;
+			selected.active = true;
+		}else{
+			selected.active = false;
+			delete $scope.selectedList[opt]
+		}
+
+		console.log("SL", $scope.selectedList)
+	}
+	
+	$scope.sendSelected = function(action){
+		c.server.get({selectedList: $scope.selectedList, action: action});
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>mv_multi_select</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>MV Multi Select</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	data.selections = [
+		{text: 'First Selection', subtext: 'First Subtext', active: false},
+		{text: 'Second Selection', subtext: 'Second Subtext', active: false},
+		{text: 'Third Selection', subtext: 'Third Subtext', active: false}
+	]
+
+	if(input){
+		if(input.action == 'sendSelected')
+			$sp.log(input.selectedList)
+			}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-10-11 19:19:14</sys_created_on>
+        <sys_id>25c859b707500010d809f0269c1ed0fc</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>MV Multi Select</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sp_widget_25c859b707500010d809f0269c1ed0fc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-10-11 20:07:23</sys_updated_on>
+        <template><![CDATA[<h3>
+  Multi-select Mockup
+</h3>
+<div class="panel">
+  <div class="list-group">
+    <button type="button" class="list-group-item" ng-repeat="option in data.selections" ng-click="doSelect(option, 'opt'+ $index)">
+      <span class=""><i class="text-success" ng-class="{'fa fa-check': option.active}"></i></span>{{option.text}}<span class="text-primary"><br><small class="text-muted">{{option.subtext}}</small></span>
+    </button>
+  </div>
+</div>
+ <div>
+    <button class="btn btn-primary" ng-click="sendSelected('sendSelected')">
+      Send Selected
+    </button>
+  </div>]]></template>
+    </sp_widget>
+</record_update>

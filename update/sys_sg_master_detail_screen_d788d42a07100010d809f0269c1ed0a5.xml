@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_master_detail_screen">
+    <sys_sg_master_detail_screen action="INSERT_OR_UPDATE">
+        <application_roles/>
+        <available_offline>false</available_offline>
+        <data_item display_value="NeedIt - Last Quarter">90534ea107d00010d809f0269c1ed0fd</data_item>
+        <description>NeedIt records from last quarter</description>
+        <fetch_type>not_required</fetch_type>
+        <hidden>false</hidden>
+        <icon display_value="clock">8f889ce607100010d809f0269c1ed04e</icon>
+        <name>NeedIt Last Quarter</name>
+        <order>10</order>
+        <parent>3769546a07100010d809f0269c1ed003</parent>
+        <parent_table>sys_sg_folder</parent_table>
+        <roles_override/>
+        <sys_class_name>sys_sg_master_detail_screen</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-10-07 17:26:14</sys_created_on>
+        <sys_id>d788d42a07100010d809f0269c1ed0a5</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>NeedIt Last Quarter</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_sg_master_detail_screen_d788d42a07100010d809f0269c1ed0a5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-10-07 17:31:33</sys_updated_on>
+    </sys_sg_master_detail_screen>
+    <sys_translated_text action="delete_multiple" query="documentkey=d788d42a07100010d809f0269c1ed0a5"/>
+</record_update>
